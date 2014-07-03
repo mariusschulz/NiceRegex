@@ -2,7 +2,7 @@
 
 namespace NiceRegex.UnitTests.Methods
 {
-    public class StartOfLineTests
+    public class AnchorTests
     {
         [Fact]
         public void RendersAStartOfStringOrLineAnchor()

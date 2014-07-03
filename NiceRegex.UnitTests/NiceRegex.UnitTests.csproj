@@ -38,7 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Methods\StartOfLineTests.cs" />
+    <Compile Include="Methods\AnchorTests.cs" />
     <Compile Include="Methods\PatternTests.cs" />
     <Compile Include="Methods\ThenTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
