@@ -7,6 +7,7 @@
         IRegularExpression Then(char character);
         IRegularExpression Then(string literal);
         IRegularExpression Pattern(string pattern);
+        IRegularExpression StartOfString();
         IRegularExpression StartOfStringOrLine();
     }
 }

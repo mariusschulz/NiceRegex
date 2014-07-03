@@ -24,6 +24,11 @@
             return ConcatenateThisWith(new RawPattern(pattern));
         }
 
+        public IRegularExpression StartOfString()
+        {
+            return ConcatenateThisWith(Anchors.StartOfString);
+        }
+
         public IRegularExpression StartOfStringOrLine()
         {
             return ConcatenateThisWith(Anchors.StartOfStringOrLine);
