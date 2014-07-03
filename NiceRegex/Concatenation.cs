@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using NiceRegex.Extensions;
 
 namespace NiceRegex
 {
@@ -19,7 +20,7 @@ namespace NiceRegex
 
         public override string GetStringRepresentation()
         {
-            return string.Join(string.Empty, _expressions);
+            return _expressions.StringJoin();
         }
     }
 }

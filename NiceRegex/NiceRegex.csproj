@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Epsilon.cs" />
     <Compile Include="Concatenation.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="IRegularExpression.cs" />
     <Compile Include="Literal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
