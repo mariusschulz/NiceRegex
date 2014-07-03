@@ -14,6 +14,11 @@
             return new Concatenation(this, Literal(literal));
         }
 
+        public IRegularExpression Pattern(string pattern)
+        {
+            return new Concatenation(this, new RawPattern(pattern));
+        }
+
         public static IRegularExpression New()
         {
             return Epsilon.Instance;
