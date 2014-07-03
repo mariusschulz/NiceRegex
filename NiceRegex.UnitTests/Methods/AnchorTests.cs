@@ -24,5 +24,12 @@ namespace NiceRegex.UnitTests.Methods
             var niceRegex = RegularExpression.New().EndOfStringOrLine();
             Assert.Equal("$", niceRegex.ToString());
         }
+
+        [Fact]
+        public void RendersAnEndOfStringAnchor()
+        {
+            var niceRegex = RegularExpression.New().EndOfString();
+            Assert.Equal(@"\Z", niceRegex.ToString());
+        }
     }
 }

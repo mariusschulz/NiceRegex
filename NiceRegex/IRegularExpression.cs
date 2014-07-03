@@ -10,5 +10,6 @@
         IRegularExpression StartOfString();
         IRegularExpression StartOfStringOrLine();
         IRegularExpression EndOfStringOrLine();
+        IRegularExpression EndOfString();
     }
 }
