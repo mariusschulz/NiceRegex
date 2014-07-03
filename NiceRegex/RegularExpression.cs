@@ -1,15 +1,17 @@
 ﻿namespace NiceRegex
 {
-    public class RegularExpression : IRegularExpression
+    public abstract class RegularExpression : IRegularExpression
     {
-        private RegularExpression()
-        {
-            
-        }
+        public abstract string GetStringRepresentation();
 
         public static IRegularExpression New()
         {
-            return new RegularExpression();
+            return Epsilon.Instance;
+        }
+
+        public sealed override string ToString()
+        {
+            return GetStringRepresentation();
         }
     }
 }
