@@ -54,6 +54,11 @@
             return ConcatenateThisWith(Anchors.WordBoundary);
         }
 
+        public IRegularExpression NonWordBoundary()
+        {
+            return ConcatenateThisWith(Anchors.NonWordBoundary);
+        }
+
         public static IRegularExpression New()
         {
             return Epsilon.Instance;

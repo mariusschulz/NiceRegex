@@ -15,5 +15,6 @@
         IRegularExpression EndOfString();
         IRegularExpression VeryEndOfString();
         IRegularExpression WordBoundary();
+        IRegularExpression NonWordBoundary();
     }
 }

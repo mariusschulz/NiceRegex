@@ -10,6 +10,7 @@
         public static readonly Anchor VeryEndOfString;
 
         public static readonly Anchor WordBoundary;
+        public static readonly Anchor NonWordBoundary;
 
         static Anchors()
         {
@@ -21,6 +22,7 @@
             VeryEndOfString = new Anchor(@"\z");
 
             WordBoundary = new Anchor(@"\b");
+            NonWordBoundary = new Anchor(@"\B");
         }
     }
 }

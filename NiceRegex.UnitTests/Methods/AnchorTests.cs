@@ -45,5 +45,12 @@ namespace NiceRegex.UnitTests.Methods
             var niceRegex = RegularExpression.New().WordBoundary();
             Assert.Equal(@"\b", niceRegex.ToString());
         }
+
+        [Fact]
+        public void RendersANonWordBoundaryAnchor()
+        {
+            var niceRegex = RegularExpression.New().NonWordBoundary();
+            Assert.Equal(@"\B", niceRegex.ToString());
+        }
     }
 }
