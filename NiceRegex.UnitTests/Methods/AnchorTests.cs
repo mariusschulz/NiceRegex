@@ -38,5 +38,12 @@ namespace NiceRegex.UnitTests.Methods
             var niceRegex = RegularExpression.New().VeryEndOfString();
             Assert.Equal(@"\z", niceRegex.ToString());
         }
+
+        [Fact]
+        public void RendersAWordBoundaryAnchor()
+        {
+            var niceRegex = RegularExpression.New().WordBoundary();
+            Assert.Equal(@"\b", niceRegex.ToString());
+        }
     }
 }

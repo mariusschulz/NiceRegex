@@ -9,6 +9,8 @@
         public static readonly Anchor EndOfString;
         public static readonly Anchor VeryEndOfString;
 
+        public static readonly Anchor WordBoundary;
+
         static Anchors()
         {
             StartOfString = new Anchor(@"\A");
@@ -17,6 +19,8 @@
             EndOfStringOrLine = new Anchor("$");
             EndOfString = new Anchor(@"\Z");
             VeryEndOfString = new Anchor(@"\z");
+
+            WordBoundary = new Anchor(@"\b");
         }
     }
 }

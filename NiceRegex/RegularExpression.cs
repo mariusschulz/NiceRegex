@@ -49,6 +49,11 @@
             return ConcatenateThisWith(Anchors.VeryEndOfString);
         }
 
+        public IRegularExpression WordBoundary()
+        {
+            return ConcatenateThisWith(Anchors.WordBoundary);
+        }
+
         public static IRegularExpression New()
         {
             return Epsilon.Instance;
