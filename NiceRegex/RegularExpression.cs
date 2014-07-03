@@ -4,12 +4,22 @@
     {
         public abstract string GetStringRepresentation();
 
+        public IRegularExpression Then(string literal)
+        {
+            return new Concatenation(this, Literal(literal));
+        }
+
         public static IRegularExpression New()
         {
             return Epsilon.Instance;
         }
 
-        public sealed override string ToString()
+        private static Literal Literal(string literal)
+        {
+            return new Literal(literal);
+        }
+
+        public override sealed string ToString()
         {
             return GetStringRepresentation();
         }
