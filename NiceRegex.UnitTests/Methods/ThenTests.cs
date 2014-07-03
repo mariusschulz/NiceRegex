@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Xunit;
+using Xunit.Extensions;
 
 namespace NiceRegex.UnitTests.Methods
 {
@@ -19,18 +20,25 @@ namespace NiceRegex.UnitTests.Methods
             Assert.Equal("a", niceRegex.ToString());
         }
 
-        [Fact]
-        public void EscapesSpecialCharacters()
+        [Theory]
+        [InlineData('.')]
+        [InlineData('$')]
+        [InlineData('^')]
+        [InlineData('{')]
+        [InlineData('[')]
+        [InlineData('(')]
+        [InlineData('|')]
+        [InlineData(')')]
+        [InlineData('*')]
+        [InlineData('+')]
+        [InlineData('?')]
+        [InlineData('\\')]
+        public void EscapesSpecialCharacters(char specialCharacter)
         {
-            char[] someSpecialCharacters = @".$^{[(|)*+?\".ToCharArray();
+            var niceRegex = RegularExpression.New().Then(specialCharacter);
+            string escaped = Regex.Escape(specialCharacter.ToString());
 
-            foreach (char specialCharacter in someSpecialCharacters)
-            {
-                var niceRegex = RegularExpression.New().Then(specialCharacter);
-                string escaped = Regex.Escape(specialCharacter.ToString());
-
-                Assert.Equal(escaped, niceRegex.ToString());
-            }
+            Assert.Equal(escaped, niceRegex.ToString());
         }
     }
 }
