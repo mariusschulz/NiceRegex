@@ -34,6 +34,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anchor.cs" />
+    <Compile Include="Anchors.cs" />
     <Compile Include="Epsilon.cs" />
     <Compile Include="Concatenation.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

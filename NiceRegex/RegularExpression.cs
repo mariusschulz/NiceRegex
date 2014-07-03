@@ -4,6 +4,11 @@
     {
         public abstract string GetStringRepresentation();
 
+        public override sealed string ToString()
+        {
+            return GetStringRepresentation();
+        }
+
         public IRegularExpression Then(char character)
         {
             return Then(character.ToString());
@@ -19,6 +24,11 @@
             return ConcatenateThisWith(new RawPattern(pattern));
         }
 
+        public IRegularExpression StartOfStringOrLine()
+        {
+            return ConcatenateThisWith(Anchors.StartOfStringOrLine);
+        }
+
         public static IRegularExpression New()
         {
             return Epsilon.Instance;
@@ -32,11 +42,6 @@
         private static Literal Literal(string literal)
         {
             return new Literal(literal);
-        }
-
-        public override sealed string ToString()
-        {
-            return GetStringRepresentation();
         }
     }
 }
