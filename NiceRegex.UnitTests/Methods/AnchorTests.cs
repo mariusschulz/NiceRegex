@@ -17,5 +17,12 @@ namespace NiceRegex.UnitTests.Methods
             var niceRegex = RegularExpression.New().StartOfString();
             Assert.Equal(@"\A", niceRegex.ToString());
         }
+
+        [Fact]
+        public void RendersAnEndOfStringOrLineAnchor()
+        {
+            var niceRegex = RegularExpression.New().EndOfStringOrLine();
+            Assert.Equal("$", niceRegex.ToString());
+        }
     }
 }

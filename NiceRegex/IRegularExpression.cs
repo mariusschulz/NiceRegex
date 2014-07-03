@@ -9,5 +9,6 @@
         IRegularExpression Pattern(string pattern);
         IRegularExpression StartOfString();
         IRegularExpression StartOfStringOrLine();
+        IRegularExpression EndOfStringOrLine();
     }
 }

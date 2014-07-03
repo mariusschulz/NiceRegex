@@ -34,6 +34,11 @@
             return ConcatenateThisWith(Anchors.StartOfStringOrLine);
         }
 
+        public IRegularExpression EndOfStringOrLine()
+        {
+            return ConcatenateThisWith(Anchors.EndOfStringOrLine);
+        }
+
         public static IRegularExpression New()
         {
             return Epsilon.Instance;
