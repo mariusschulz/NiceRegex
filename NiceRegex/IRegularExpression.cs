@@ -11,5 +11,6 @@
         IRegularExpression StartOfStringOrLine();
         IRegularExpression EndOfStringOrLine();
         IRegularExpression EndOfString();
+        IRegularExpression VeryEndOfString();
     }
 }

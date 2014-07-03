@@ -7,6 +7,7 @@
 
         public static readonly Anchor EndOfStringOrLine;
         public static readonly Anchor EndOfString;
+        public static readonly Anchor VeryEndOfString;
 
         static Anchors()
         {
@@ -15,6 +16,7 @@
 
             EndOfStringOrLine = new Anchor("$");
             EndOfString = new Anchor(@"\Z");
+            VeryEndOfString = new Anchor(@"\z");
         }
     }
 }

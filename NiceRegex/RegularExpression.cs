@@ -44,6 +44,11 @@
             return ConcatenateThisWith(Anchors.EndOfString);
         }
 
+        public IRegularExpression VeryEndOfString()
+        {
+            return ConcatenateThisWith(Anchors.VeryEndOfString);
+        }
+
         public static IRegularExpression New()
         {
             return Epsilon.Instance;

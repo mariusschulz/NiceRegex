@@ -31,5 +31,12 @@ namespace NiceRegex.UnitTests.Methods
             var niceRegex = RegularExpression.New().EndOfString();
             Assert.Equal(@"\Z", niceRegex.ToString());
         }
+
+        [Fact]
+        public void RendersAVeryEndOfStringAnchor()
+        {
+            var niceRegex = RegularExpression.New().VeryEndOfString();
+            Assert.Equal(@"\z", niceRegex.ToString());
+        }
     }
 }
