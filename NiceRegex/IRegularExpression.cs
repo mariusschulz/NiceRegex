@@ -4,6 +4,7 @@
     {
         string GetStringRepresentation();
 
+        IRegularExpression Then(char character);
         IRegularExpression Then(string literal);
     }
 }

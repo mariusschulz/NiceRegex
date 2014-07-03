@@ -4,6 +4,11 @@
     {
         public abstract string GetStringRepresentation();
 
+        public IRegularExpression Then(char character)
+        {
+            return Then(character.ToString());
+        }
+
         public IRegularExpression Then(string literal)
         {
             return new Concatenation(this, Literal(literal));

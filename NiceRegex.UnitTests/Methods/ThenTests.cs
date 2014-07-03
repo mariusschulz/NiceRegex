@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Text.RegularExpressions;
+using Xunit;
 
 namespace NiceRegex.UnitTests.Methods
 {
@@ -8,9 +9,28 @@ namespace NiceRegex.UnitTests.Methods
         public void AppendsAStringLiteral()
         {
             var niceRegex = RegularExpression.New().Then("a");
-            string pattern = niceRegex.ToString();
+            Assert.Equal("a", niceRegex.ToString());
+        }
 
-            Assert.Equal("a", pattern);
+        [Fact]
+        public void AppendsACharacterLiteral()
+        {
+            var niceRegex = RegularExpression.New().Then('a');
+            Assert.Equal("a", niceRegex.ToString());
+        }
+
+        [Fact]
+        public void EscapesSpecialCharacters()
+        {
+            char[] someSpecialCharacters = @".$^{[(|)*+?\".ToCharArray();
+
+            foreach (char specialCharacter in someSpecialCharacters)
+            {
+                var niceRegex = RegularExpression.New().Then(specialCharacter);
+                string escaped = Regex.Escape(specialCharacter.ToString());
+
+                Assert.Equal(escaped, niceRegex.ToString());
+            }
         }
     }
 }
