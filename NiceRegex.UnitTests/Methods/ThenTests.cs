@@ -33,7 +33,7 @@ namespace NiceRegex.UnitTests.Methods
         [InlineData('+')]
         [InlineData('?')]
         [InlineData('\\')]
-        public void EscapesSpecialCharacters(char specialCharacter)
+        public void EscapesSpecialCharacter(char specialCharacter)
         {
             var niceRegex = RegularExpression.New().Then(specialCharacter);
             string escaped = Regex.Escape(specialCharacter.ToString());
