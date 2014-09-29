@@ -16,47 +16,47 @@
 
         public IRegularExpression Then(string literal)
         {
-            return ConcatenateThisWith(Literal(literal));
+            return Append(Literal(literal));
         }
 
         public IRegularExpression Pattern(string pattern)
         {
-            return ConcatenateThisWith(new RawPattern(pattern));
+            return Append(new RawPattern(pattern));
         }
 
         public IRegularExpression StartOfString()
         {
-            return ConcatenateThisWith(Anchors.StartOfString);
+            return Append(Anchors.StartOfString);
         }
 
         public IRegularExpression StartOfStringOrLine()
         {
-            return ConcatenateThisWith(Anchors.StartOfStringOrLine);
+            return Append(Anchors.StartOfStringOrLine);
         }
 
         public IRegularExpression EndOfStringOrLine()
         {
-            return ConcatenateThisWith(Anchors.EndOfStringOrLine);
+            return Append(Anchors.EndOfStringOrLine);
         }
 
         public IRegularExpression EndOfString()
         {
-            return ConcatenateThisWith(Anchors.EndOfString);
+            return Append(Anchors.EndOfString);
         }
 
         public IRegularExpression VeryEndOfString()
         {
-            return ConcatenateThisWith(Anchors.VeryEndOfString);
+            return Append(Anchors.VeryEndOfString);
         }
 
         public IRegularExpression WordBoundary()
         {
-            return ConcatenateThisWith(Anchors.WordBoundary);
+            return Append(Anchors.WordBoundary);
         }
 
         public IRegularExpression NonWordBoundary()
         {
-            return ConcatenateThisWith(Anchors.NonWordBoundary);
+            return Append(Anchors.NonWordBoundary);
         }
 
         public static IRegularExpression New()
@@ -64,7 +64,7 @@
             return Epsilon.Instance;
         }
 
-        private IRegularExpression ConcatenateThisWith(IRegularExpression expression)
+        private IRegularExpression Append(IRegularExpression expression)
         {
             return new Concatenation(this, expression);
         }
